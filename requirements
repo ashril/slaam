@@ -80,4 +80,7 @@ create table media_online(
 - masuk ke aidb - databases - aidb - schemas - public - tables - klik kanan kemudian refresh
 
 
+Google Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 
