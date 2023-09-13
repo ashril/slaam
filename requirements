@@ -1,0 +1,83 @@
+Docker Server
+
+INSTALL DOCKER
+- sudo apt-get update
+- sudo apt install docker
+- sudo apt install docker.io
+- sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+- sudo service docker start
+- docker pull postgres
+- cek images
+    - docker images
+- buat container
+    - docker run --name slaam-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=aidb -p 5432:5432 -d postgres
+
+server sinergi:
+docker run --name slaam-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=sekawan! -e POSTGRES_DB=sinergidb -p 5432:5432 -d postgres
+
+
+- cek dengan
+    - docker ps -a
+    - kalau sudah mati dan mau run ulang, gunakan 
+        - docker run slaam-postgres
+- run container
+    - docker exec -it slaam-postgres bash
+- coba buka postgre dengan
+    - psql -U admin --password --db aidb
+
+
+
+
+INSTALL PGADMIN (cat: jangan pernah install di server)
+docker pull dpage/pgadmin4
+docker run -p 5050:80 -e "PGADMIN_DEFAULT_EMAIL=ashril.rizal@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=admin" -d dpage/pgadmin4
+docker ps (cek container id untuk postgree yang berjalan BUKAN pgadminnya) 
+docker inspect docker_id
+cek IP
+
+masuk ke localhost:5050
+isi IP dengan IP hasil inspect
+isi username dan password dari postres
+
+RUN DOCKER
+- run (jalankan) docker desktop
+- cek versi
+	docker -v
+- login atau registrasi ke dockerhub
+- cek image yang ada dengan:
+	docker images
+- install postgres (kalau belum adal)
+	docker pull postgres
+- cek docker images, sudah ada postgres atau belum
+- jalankan docker
+	docker run --name slaam-ai-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=aidb -p 5432:5432 -d postgres
+- cek kontainer yang jalan
+	docker ps -a
+- catat NAMES kontainer yang jalan
+- run container dengan cara masuk ke bash dulu
+	docker exec -it slaam-ai-postgres bash
+- jalankan psql di bash
+	psql -U admin --password --db aidb
+	--> masukkan password (admin)
+
+
+
+KONEKSI DENGAN DBEAVER
+- buka dbeaver
+- Pilih New Database Connection
+- Pilih PostgreSQL
+- Host: localhost, Post: 5432, database: aidb, username: admin, password:admin
+
+create tabel media online:
+create table media_online(
+	id_berita serial primary key,
+	title varchar(100),
+	deskripsi varchar(100),
+	image bytea,
+	datetime date
+)
+- blok kemudian run
+- masuk ke aidb - databases - aidb - schemas - public - tables - klik kanan kemudian refresh
+
+
+
