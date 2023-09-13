@@ -84,6 +84,8 @@ Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
+wget https://drive.google.com/drive/folders/1PqBchm0vEaQLf8SlCCGMwly7mP4o1G4e?usp=sharing, https://drive.google.com/file/d/1SdX6u6hAjfhD2oQNV8HkUk6C8DM0DxLC/view?usp=sharing, https://drive.google.com/drive/folders/1oogBjhd9TkyqLkUnAx_AR91HaE2anj38?usp=sharing
+
 VSCODE
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
