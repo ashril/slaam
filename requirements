@@ -30,7 +30,7 @@ docker run --name slaam-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=sek
 
 INSTALL PGADMIN (cat: jangan pernah install di server)
 docker pull dpage/pgadmin4
-docker run -p 5050:80 -e "PGADMIN_DEFAULT_EMAIL=ashril.rizal@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=admin" -d dpage/pgadmin4
+docker run -p 5050:80 -e "PGADMIN_DEFAULT_EMAIL=slaam@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=admin" -d dpage/pgadmin4
 docker ps (cek container id untuk postgree yang berjalan BUKAN pgadminnya) 
 docker inspect docker_id
 cek IP
